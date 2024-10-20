@@ -40,7 +40,7 @@ const Home = () => {
     return (
 
   <>
-
+    
   <div className='row'>
     {keyword && (
       <div className='col-6 col-md-3 mt-5'>
