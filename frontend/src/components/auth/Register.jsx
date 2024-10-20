@@ -8,6 +8,7 @@ import MetaData from "../layouts/MetaData";
 const Register = () => {
 
     const [ register, { isLoading, error, data, isSuccess } ] = useRegisterMutation()
+    const [showPassword, setshowPassword] = useState(false);
 
     const {isAuthenticated} = useSelector((state) => state.auth)
     const navigate = useNavigate()
@@ -107,13 +108,24 @@ const Register = () => {
             <div class="mb-3">
               <label htmlFor="password_field" class="form-label">Password</label>
               <input
-                type="password"
+                type={
+                  showPassword
+                      ? "text"
+                      : "password"
+              }
                 id="password_field"
                 class="form-control"
                 name="password"
                 value={password}
                 onChange={onChange}
+                onClick={() =>
+                  setshowPassword(
+               (prevState) =>
+                   !prevState
+                      )
+                    }
               />
+            <p>Note: Click in the password area to reveal or hide password</p>
             </div>
   
             <button id="register_button" type="submit" class="btn w-100 py-2" disabled={isLoading}>
