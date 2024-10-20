@@ -96,6 +96,9 @@ export const userApi = createApi({
         query: (id) => `/admin/users/${id}`,
         providesTags: ["AdminUser"]
    }),
+   ads: builder.query({
+    query: () => `/Ads.txt`,
+}),
     })
 })
 
