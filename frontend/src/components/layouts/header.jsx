@@ -44,6 +44,7 @@ const Header = () => {
     const LogoutHandler =() => {
       logout();
       handleClick()
+      toast.success("You are LoggedIn")
       }
 
       const refresh = () => {

@@ -35,8 +35,8 @@ const Login = () => {
     useEffect(() => {
 
       if (isAuthenticated){
-        navigate(0)
         navigate("/")
+        toast.success("You are LoggedIn")
         }
 
         if(error) {
