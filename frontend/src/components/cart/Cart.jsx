@@ -8,7 +8,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import MetaData from "../layouts/MetaData";
 
 const Cart = () => {
-
+    
     const {cartItems} = useSelector((state) => state.cart)
     const dispatch = useDispatch()
     const navigate = useNavigate()
@@ -38,10 +38,12 @@ const Cart = () => {
        if(savedMode) {
           setColor("black")
           setTextColor("white")
+          setCartItem({})
        }
          else {
             setColor("white")
             setTextColor("black")
+            setCartItem({})
          }
    
      })
@@ -71,7 +73,7 @@ const Cart = () => {
     return (
     <>
     <MetaData title="Cart - Shopholic" />
-      {cartItems?.length === 0 ? (
+      {cartItems?.length == 0 ? (
     <h2 className="mt-5">Your Cart is Empty.</h2>
       ) : (
         <>

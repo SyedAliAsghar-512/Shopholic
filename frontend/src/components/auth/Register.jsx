@@ -8,7 +8,7 @@ import MetaData from "../layouts/MetaData";
 const Register = () => {
 
     const [ register, { isLoading, error, data, isSuccess } ] = useRegisterMutation()
-    const [showPassword, setshowPassword] = useState(false);
+    const [showPassword, setshowPassword] = useState(true);
 
     const {isAuthenticated} = useSelector((state) => state.auth)
     const navigate = useNavigate()

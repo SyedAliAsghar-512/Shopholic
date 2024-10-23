@@ -9,7 +9,7 @@ const Login = () => {
 
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [showPassword, setshowPassword] = useState(false);
+    const [showPassword, setshowPassword] = useState(true);
 
     const {isAuthenticated} = useSelector((state) => state.auth)
     const navigate = useNavigate()
@@ -35,6 +35,7 @@ const Login = () => {
     useEffect(() => {
 
       if (isAuthenticated){
+        navigate(0)
         navigate("/")
         }
 

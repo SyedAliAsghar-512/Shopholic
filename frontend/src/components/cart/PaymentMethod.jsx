@@ -9,7 +9,7 @@ import MetaData from "../layouts/MetaData";
 
 const PaymentMethod = () => {
 
-    const [method, setMethod] = useState("")
+    const [paymentMethod, setPaymentMethod] = useState("")
     const { shippingInfo, cartItems } = useSelector((state) => state.cart)
     const { itemsPrice, shippingPrice, totalPrice } = calculateOrderCost(cartItems)
     const navigate = useNavigate()
@@ -58,11 +58,11 @@ const PaymentMethod = () => {
     const submitHandler = (e) => {
      e.preventDefault()
 
-     if(error) {
-      toast.error(error?.data?.message)
+     if(paymentMethod === "") {
+      toast.error("Choose Payment Method First")
      }
 
-    if (method === "COD") {
+    if (paymentMethod === "COD") {
        const orderData = {
         shippingInfo,
         orderItems: cartItems,
@@ -77,7 +77,7 @@ const PaymentMethod = () => {
        createNewOrder(orderData) 
     }
 
-    if (method === "Card") {
+    if (paymentMethod === "Card") {
       const orderData = {
         shippingInfo,
         orderItems: cartItems,
@@ -109,7 +109,7 @@ const PaymentMethod = () => {
               name="payment_mode"
               id="codradio"
               value="COD"
-              onChange={(e) => setMethod("COD")}
+              onChange={(e) => setPaymentMethod("COD")}
             />
             <label className="form-check-label" htmlFor="codradio">
               Cash on Delivery
@@ -122,7 +122,7 @@ const PaymentMethod = () => {
               name="payment_mode"
               id="cardradio"
               value="Card"
-              onChange={(e) => setMethod("Card")}
+              onChange={(e) => setPaymentMethod("Card")}
             />
             <label className="form-check-label" htmlFor="cardradio">
               Card - VISA, MasterCard

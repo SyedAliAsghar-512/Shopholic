@@ -28,7 +28,7 @@ const savedMode = localStorage.getItem('darkMode') === 'true';
 useEffect(() => {
   if(savedMode) {
      setColor("#0e1011")
-     setTextColor("white")
+     setTextColor("black")
   }
     else {
        setColor("white")
@@ -106,39 +106,39 @@ const handleDownload = () => {
                 <tr>
                 <td className="service" style={{ color: textColor}} >{item?.product}</td>
                 <td className="desc" style={{ color: textColor}}>{item?.name}</td>
-                <td className="unit">${item?.price}</td>
-                <td className="qty">{item?.quantity}</td>
-                <td className="total">${item?.price * item?.quantity}</td>
+                <td className="unit" style={{ color: textColor}}>${item?.price}</td>
+                <td className="qty" style={{ color: textColor}}>{item?.quantity}</td>
+                <td className="total" style={{ color: textColor}}>${item?.price * item?.quantity}</td>
               </tr>
 
               ))}
 
               <tr>
                 <td colspan="4">
-                  <b>SUBTOTAL</b>
+                  <b style={{ color: textColor}}>SUBTOTAL</b>
                 </td>
-                <td className="total">${order?.itemsPrice}</td>
+                <td className="total" style={{ color: textColor}}>${order?.itemsPrice}</td>
               </tr>
 
               <tr>
                 <td colspan="4">
-                  <b>TAX</b>
+                  <b style={{ color: textColor}}>TAX</b>
                 </td>
-                <td className="total">${order?.taxPrice}</td>
+                <td className="total" style={{ color: textColor}}>${order?.taxPrice}</td>
               </tr>
 
               <tr>
                 <td colspan="4">
-                  <b>SHIPPING</b>
+                  <b style={{ color: textColor}}>SHIPPING</b>
                 </td>
-                <td className="total">${order?.shippingPrice}</td>
+                <td className="total" style={{ color: textColor}}>${order?.shippingPrice}</td>
               </tr>
 
               <tr>
-                <td colspan="4" className="grand total">
+                <td colspan="4" className="grand total" style={{ color: textColor}}>
                   <b>GRAND TOTAL</b>
                 </td>
-                <td className="grand total">${order?.totalPrice}</td>
+                <td className="grand total" style={{ color: textColor}}>${order?.totalPrice}</td>
               </tr>
             </tbody>
           </table>

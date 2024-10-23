@@ -154,12 +154,13 @@ nav {
 
 .card-title a {
   text-decoration: none;
+  color: #db9233;
 
 
 }
 
 .card-title a:hover {
-  color: #fa9c23;
+  color: #e78300;
 }
 
 .card-body {

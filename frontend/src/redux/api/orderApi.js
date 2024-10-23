@@ -45,7 +45,7 @@ export const orderApi = createApi({
               body,
         }
      },
-     invalidatesTags: ["Order"]
+     invalidatesTags: ["Order","AdminOrders"]
  }),
  deleteOrder: builder.mutation({
    query(id) {
@@ -54,7 +54,7 @@ export const orderApi = createApi({
          method: "DELETE",
    }
 },
-invalidatesTags: ["AdminOrders"]
+invalidatesTags: ["Order","AdminOrders"]
 }),
     }),
 });

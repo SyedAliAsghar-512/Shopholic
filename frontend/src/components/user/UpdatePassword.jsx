@@ -9,6 +9,7 @@ const UpdatePassword = () => {
 
     const [oldPassword, setOldPassword] = useState('')
     const [password, setPassword] = useState('')
+    const [showPassword, setshowPassword] = useState(true);
 
     const navigate = useNavigate()
 
@@ -68,12 +69,23 @@ const UpdatePassword = () => {
                 Old Password
               </label>
               <input
-                type="password"
-                id="old_password_field"
+                type={
+                  showPassword
+                      ? "text"
+                      : "password"
+              }
+                id="password_field"
                 className="form-control"
+                name="oldPassword"
                 value={oldPassword}
                 onChange={(e) => setOldPassword(e.target.value)}
-              />
+                          onClick={() =>
+                setshowPassword(
+             (prevState) =>
+                 !prevState
+                    )
+                  }
+            />
             </div>
   
             <div className="mb-3">
@@ -81,12 +93,24 @@ const UpdatePassword = () => {
                 New Password
               </label>
               <input
-                type="password"
-                id="new_password_field"
+                type={
+                  showPassword
+                      ? "text"
+                      : "password"
+              }
+                id="password_field"
                 className="form-control"
+                name="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-              />
+                          onClick={() =>
+                setshowPassword(
+             (prevState) =>
+                 !prevState
+                    )
+                  }
+            />
+          <p>Note: Click in the password area to reveal or hide password</p>
             </div>
   
             <button type="submit" className="btn update-btn w-100" disabled={isLoading}>

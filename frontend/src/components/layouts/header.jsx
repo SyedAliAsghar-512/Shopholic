@@ -15,6 +15,7 @@ const Header = () => {
   const [textColor, setTextColor] = useState("")
   const [itemColor, setItemColor] = useState("")
   const savedMode = localStorage.getItem('darkMode') === 'true';
+  const navigate = useNavigate()
 
   useEffect(() => {
     if(savedMode) {
@@ -29,12 +30,11 @@ const Header = () => {
       }
   })
 
-
-    var i = 0
-
-    const {isAuthenticated} = useSelector((state) => state.auth)
-
-    const navigate = useNavigate()
+  const handleClick = () => {
+    setTimeout(() => {
+        navigate(0)
+    }, 1000); 
+};
 
     const [logout] = useLazyLogoutQuery()
 
@@ -43,10 +43,7 @@ const Header = () => {
 
     const LogoutHandler =() => {
       logout();
-      for(i=0;i<5000;i++) {
-       console.log("yesh")
-      }
-        navigate(0)
+      handleClick()
       }
 
       const refresh = () => {
@@ -59,9 +56,8 @@ const Header = () => {
       <div className="col-12 col-md-3 ps-5 text-center">
         <div className="navbar-brand">
           <a href="/">
-            <img src="/images/logo2.png" width="100" height="50" alt="Shopholic" />
+            <img src="/images/logo4.png" width="200" height="150" alt="Shopholic" />
           </a>
-          <h5 className="logoName">Shopholic</h5>
         </div>
       </div>
       <div className="col-12 col-md-6 mt-2 mt-md-0">
@@ -103,7 +99,7 @@ const Header = () => {
 
             <Link className="dropdown-item" to="/me/profile" style={{ backgroundColor: itemColor,color: textColor}}>{" "} Profile{" "} </Link>
 
-            <Link className="dropdown-item text-danger" to="/" onClick={LogoutHandler} style={{ backgroundColor: itemColor}}> Logout</Link>
+            <Link className="dropdown-item text-danger" to="" onClick={LogoutHandler} style={{ backgroundColor: itemColor}}> Logout</Link>
           </div>
         </div>
 ): (
