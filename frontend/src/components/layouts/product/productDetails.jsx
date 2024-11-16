@@ -122,7 +122,7 @@ if(error && error?.status == 404 ) {
                 
         <hr />
 
-        <p id="product_price">${product?.price}</p>
+        <p id="product_price">Rs {product?.price}</p>
         <div class="stockCounter d-inline">
           <span class="btn btn-danger minus" onClick={decreaseQty}>-</span>
           <input

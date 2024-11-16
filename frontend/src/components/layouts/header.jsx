@@ -6,7 +6,7 @@ import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { useLazyLogoutQuery } from "../../redux/api/authApi";
 import DarkModeToggle from "../layouts/DarkModeToggle"
-import Loader from "../layouts/loader"
+import toast from "react-hot-toast"
 
 const Header = () => {
 
@@ -44,7 +44,7 @@ const Header = () => {
     const LogoutHandler =() => {
       logout();
       handleClick()
-      toast.success("You are LoggedIn")
+      toast.error("You are Logged-Out")
       }
 
       const refresh = () => {

@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import CheckoutSteps from "./CheckoutSteps";
 import { calculateOrderCost } from "../helpers/helpers";
 import { useCreateNewOrderMutation, useStripeCheckoutSessionMutation } from "../../redux/api/orderApi";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import MetaData from "../layouts/MetaData";
+import {clearCart } from "../../redux/features/cartSlice";
 
 const PaymentMethod = () => {
 
@@ -15,6 +16,7 @@ const PaymentMethod = () => {
     const navigate = useNavigate()
     const [ createNewOrder ,{ error, isSuccess } ] = useCreateNewOrderMutation()
     const [stripeCheckoutSession, {data: checkoutdata, error: checkoutError, isLoading}] = useStripeCheckoutSessionMutation()
+    const dispatch = useDispatch()
 
     const [color, setColor] = useState("")
     const [textColor, setTextColor] = useState("")
@@ -50,6 +52,7 @@ const PaymentMethod = () => {
 
         if (isSuccess) {
             navigate("/me/orders?order_success=true")
+            dispatch(clearCart())
             toast.success("Order Placed")
         }
 

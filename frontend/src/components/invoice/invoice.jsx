@@ -106,9 +106,9 @@ const handleDownload = () => {
                 <tr>
                 <td className="service" style={{ color: textColor}} >{item?.product}</td>
                 <td className="desc" style={{ color: textColor}}>{item?.name}</td>
-                <td className="unit" style={{ color: textColor}}>${item?.price}</td>
+                <td className="unit" style={{ color: textColor}}>Rs {item?.price}</td>
                 <td className="qty" style={{ color: textColor}}>{item?.quantity}</td>
-                <td className="total" style={{ color: textColor}}>${item?.price * item?.quantity}</td>
+                <td className="total" style={{ color: textColor}}>Rs {item?.price * item?.quantity}</td>
               </tr>
 
               ))}
@@ -124,21 +124,21 @@ const handleDownload = () => {
                 <td colspan="4">
                   <b style={{ color: textColor}}>TAX</b>
                 </td>
-                <td className="total" style={{ color: textColor}}>${order?.taxPrice}</td>
+                <td className="total" style={{ color: textColor}}>Rs {order?.taxPrice}</td>
               </tr>
 
               <tr>
                 <td colspan="4">
                   <b style={{ color: textColor}}>SHIPPING</b>
                 </td>
-                <td className="total" style={{ color: textColor}}>${order?.shippingPrice}</td>
+                <td className="total" style={{ color: textColor}}>Rs {order?.shippingPrice}</td>
               </tr>
 
               <tr>
                 <td colspan="4" className="grand total" style={{ color: textColor}}>
                   <b>GRAND TOTAL</b>
                 </td>
-                <td className="grand total" style={{ color: textColor}}>${order?.totalPrice}</td>
+                <td className="grand total" style={{ color: textColor}}>Rs {order?.totalPrice}</td>
               </tr>
             </tbody>
           </table>

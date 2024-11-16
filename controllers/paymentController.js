@@ -29,7 +29,7 @@ export const stripeCheckoutSession = catchAsyncErrors(async(req, res, next) => {
 
     payment_method_types: ["card"],
     success_url: `https://shopholic-1w1s.onrender.com/me/orders`,
-    cancel_url: `${process.env.FRONTEND_URL}`,
+    cancel_url: `https://shopholic-1w1s.onrender.com`,
     customer_email: req?.user?.email,
     client_reference_id: req?.user?._id?.toString(),
     mode: "payment",

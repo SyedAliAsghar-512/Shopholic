@@ -81,7 +81,7 @@ const MyOrders = () => {
         data?.orders?.forEach((order) => {
             orders.rows.push({
                 id: order._id,
-                amount: `$${order?.totalPrice}`,
+                amount: `Rs ${order?.totalPrice}`,
                 status: order?.paymentInfo?.status?.toUpperCase(),
                 orderStatus: order?.orderStatus,
                 actions: <>

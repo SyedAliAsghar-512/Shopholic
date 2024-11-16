@@ -107,7 +107,7 @@ const UpdateProduct = () => {
 
           <div className="row">
             <div className="mb-3 col">
-              <label htmlFor="price_field" className="form-label"> Price </label>
+              <label htmlFor="price_field" className="form-label"> Price in Rs</label>
               <input
                 type="text"
                 id="price_field"

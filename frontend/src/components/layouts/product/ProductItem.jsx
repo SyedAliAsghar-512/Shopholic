@@ -49,7 +49,7 @@ const ProductItem = ({product}) => {
                   ({product?.numOfReviews})
                 </span>
                 </div>
-                <p className='card-text mt-2' style={{ color: textColor, textAlign: 'center'}}>${product.price}</p> 
+                <p className='card-text mt-2' style={{ color: textColor, textAlign: 'center'}}>Rs {product.price}</p> 
                 <a href={`/product/${product._id}`} id='view_btn' className='btn btn-block'>View Details</a>
             </div>
           </div>  
