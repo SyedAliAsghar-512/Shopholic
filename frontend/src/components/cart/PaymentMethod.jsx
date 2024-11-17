@@ -81,15 +81,17 @@ const PaymentMethod = () => {
     }
 
     if (paymentMethod === "Card") {
-      const orderData = {
+    /*  const orderData = {
         shippingInfo,
         orderItems: cartItems,
         itemsPrice,
         shippingPrice,
         totalPrice,
        }
-       stripeCheckoutSession(orderData)
-    }
+       stripeCheckoutSession(orderData)  */
+      
+       toast.error("Service is unavailable right now.")
+      }
 
     }
 
