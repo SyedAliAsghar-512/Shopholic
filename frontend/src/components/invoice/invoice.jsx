@@ -78,7 +78,7 @@ const handleDownload = () => {
               <a href="mailto:info@shopholic.com">info@shopholic.com</a>
             </div>
           </div>
-          <div id="project">
+          <div id="project" style={{ color: "grey"}}>
             <div><span>Name</span>{user?.name}</div>
             <div><span>EMAIL</span> {user?.email}</div>
             <div><span>PHONE</span> {shippingInfo?.phoneNo}</div>
